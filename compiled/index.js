@@ -1,0 +1,6 @@
+'use strict';
+
+// TODO: Render the `App` component to the DOM
+
+ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9pbmRleC5qcyJdLCJuYW1lcyI6WyJSZWFjdERPTSIsInJlbmRlciIsImRvY3VtZW50IiwiZ2V0RWxlbWVudEJ5SWQiXSwibWFwcGluZ3MiOiI7O0FBQUE7O0FBRUFBLFNBQVNDLE1BQVQsQ0FBZ0Isb0JBQUMsR0FBRCxPQUFoQixFQUF3QkMsU0FBU0MsY0FBVCxDQUF3QixLQUF4QixDQUF4QiIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIFRPRE86IFJlbmRlciB0aGUgYEFwcGAgY29tcG9uZW50IHRvIHRoZSBET01cblxuUmVhY3RET00ucmVuZGVyKDxBcHAvPiwgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2FwcCcpKTtcbiAgICJdfQ==
