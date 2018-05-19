@@ -5,21 +5,53 @@
     <title>Movie List</title>
     <script src="lib/react/react-with-addons.js"></script>
     <script src="lib/react/react-dom.js"></script>
+    <link rel="styles" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Quicksand" rel="stylesheet">
+
     <style>
       body {
+        font-family: 'Quicksand', sans-serif;
+        margin: 5%;
+        font-size: 1px;
         background-color: aliceblue;
       }
-      img {
-        border-radius: 50px;
-        height: 240px;
-        width: 240px;
+      h1 {
+        text-align: center;
+        font-size: 30px;
       }
-      .fish-name {
-        padding: 0px 50px;
-        font: italic bold 24px serif;
+      .watched {
+        float: right;
+        background: #77dd77;
+        border-radius: 25px;
+        border: 1px solid black;
+        margin-left: 100px;
       }
-      .fish-description {
-        padding: 0px 50px;
+      .movie-list-entry-title {
+        margin-left: 50px;
+        font-size: 15px;
+      }
+      .entry:nth-child(even) {
+        background-color: #D3D3D3;
+        padding: 20px;
+        margin: 0px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+      .search-nav input[type=text] {
+        /*float: right;*/
+        /*padding: 6px;*/
+        border: none;
+        margin-top: 8px;
+        margin-right: 4px;
+        margin-bottom: 8px;
+        font-size: 12px;
+      }
+      .search-nav {
+        text-align: right;
+      }
+
+      #watched-button #to-watch-button #all-button {
+        
       }
     </style>
   </head>
@@ -27,6 +59,7 @@
     <h1>MovieList</h1>
     <div id="app"></div>
     <script src="compiled/components/App.js"></script>
+    <script src="compiled/components/Add.js"></script>
     <script src="compiled/components/Search.js"></script>
     <script src="compiled/components/MovieList.js"></script>
     <script src="compiled/components/MovieListEntry.js"></script>

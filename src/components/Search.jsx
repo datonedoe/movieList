@@ -7,17 +7,19 @@ constructor(props) {
     }
  }
 
- // handleOnClick(event) {
- // 	this.setState ({
- // 		value: event.target.value
- // 	})
- // }
+
+ handleOnChange(event) {
+ 	// console.log(event.target.value)
+ 	this.setState ({
+ 		value: event.target.value
+ 	})
+ }
 
  render() {
  	return (
 	  <div className="search-bar form-inline">
-	    <input className="form-control" type="text"/>
-	    <button className="btn hidden-sm-down" onClick={() => this.props.handleSearch(event.target.value)}> submit
+	    <input className="form-control" type="text" placeholder="search" onChange={(event) => {this.handleOnChange(event)}}/>
+	    <button className="btn hidden-sm-down" onClick={this.props.handleSearch.bind(this, this.state.value)}> go!
 	      <span className="glyphicon glyphicon-search"></span>
 	    </button>
 	  </div> 

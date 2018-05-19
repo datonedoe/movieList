@@ -14,6 +14,14 @@ body {
   width: 50px;
 }
 
+.add {
+  border-radius: 2px;
+  border-color: green;
+  background: green;
+  width: 20%;
+  margin-left: -1px;
+}
+
 .search-bar {
   border-radius: 1px;
   background: #fff;
@@ -23,6 +31,7 @@ body {
   border-radius: 2px;
   width: 80%
 }
+
 .search-bar .btn {
   border-radius: 2px;
   border-color: #d3d3d3;
@@ -30,6 +39,7 @@ body {
   width: 20%;
   margin-left: -1px;
 }
+
 
 .search-bar .btn:hover {
   border-color: #c6c6c6;

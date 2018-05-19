@@ -3,11 +3,39 @@ class MovieList extends React.Component {
     super(props);
   }
   render() {
+    
+    
     return (
       <div className="movie-list">
-      {this.props.movies.map((movie, i) =>
-        <MovieListEntry movie={movie} key={i}/>
-       )}
+
+      {
+        (this.props.query === '') ?  
+
+        (this.props.movies.map((movie, i) =>
+            <MovieListEntry 
+              movie={movie} 
+              key={i}
+              addWatched={this.props.addWatched} 
+              addUnWatched={this.props.addUnWatched}
+              removeWatched={this.props.removeWatched}
+              removeUnWatched={this.props.removeUnWatched}
+            />
+        ))
+
+        :
+
+        (this.props.movies.filter((movie) => 
+          movie.title.includes(this.props.query)).map((movie, i) =>
+          <MovieListEntry 
+            movie={movie} 
+            key={i}
+            addWatched={this.props.addWatched} 
+            addUnWatched={this.props.addUnWatched}
+            removeWatched={this.props.removeWatched}
+            removeUnWatched={this.props.removeUnWatched}
+          />
+        ))
+      }
       </div>
     );
   }
@@ -23,4 +51,18 @@ MovieList.propTypes = {
 
 // In the ES6 spec, files are "modules" and do not share a top-level scope.
 // `var` declarations will only exist globally where explicitly defined.
-window.MovieList = MovieList;
+// window.MovieList = MovieList;
+
+      // {
+      //   if (this.props.query !== '') {
+      //     this.props.movies.filter((movie) => 
+      //     movie.title === this.props.query).map((movie, i) =>
+      //     <MovieListEntry movie={movie} key={i}/>
+      //   )}
+      // }
+      // {
+      //   if (this.props.query === '') {
+      //     this.props.movies.map((movie, i) =>
+      //       <MovieListEntry movie={movie} key={i}/>
+      //   )}
+      // }

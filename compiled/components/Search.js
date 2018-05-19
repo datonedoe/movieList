@@ -22,13 +22,15 @@ var Search = function (_React$Component) {
         return _this;
     }
 
-    // handleOnClick(event) {
-    // 	this.setState ({
-    // 		value: event.target.value
-    // 	})
-    // }
-
     _createClass(Search, [{
+        key: "handleOnChange",
+        value: function handleOnChange(event) {
+            // console.log(event.target.value)
+            this.setState({
+                value: event.target.value
+            });
+        }
+    }, {
         key: "render",
         value: function render() {
             var _this2 = this;
@@ -36,13 +38,13 @@ var Search = function (_React$Component) {
             return React.createElement(
                 "div",
                 { className: "search-bar form-inline" },
-                React.createElement("input", { className: "form-control", type: "text" }),
+                React.createElement("input", { className: "form-control", type: "text", placeholder: "search", onChange: function onChange(event) {
+                        _this2.handleOnChange(event);
+                    } }),
                 React.createElement(
                     "button",
-                    { className: "btn hidden-sm-down", onClick: function onClick() {
-                            return _this2.props.handleSearch(event.target.value);
-                        } },
-                    " submit",
+                    { className: "btn hidden-sm-down", onClick: this.props.handleSearch.bind(this, this.state.value) },
+                    " go!",
                     React.createElement("span", { className: "glyphicon glyphicon-search" })
                 )
             );
@@ -57,4 +59,4 @@ var Search = function (_React$Component) {
 
 
 window.Search = Search;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb21wb25lbnRzL1NlYXJjaC5qc3giXSwibmFtZXMiOlsiU2VhcmNoIiwicHJvcHMiLCJzdGF0ZSIsInZhbHVlIiwiaGFuZGxlU2VhcmNoIiwiZXZlbnQiLCJ0YXJnZXQiLCJSZWFjdCIsIkNvbXBvbmVudCIsIndpbmRvdyJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztJQUFNQSxNOzs7QUFDTixvQkFBWUMsS0FBWixFQUFtQjtBQUFBOztBQUFBLG9IQUNUQSxLQURTOztBQUdmLGNBQUtDLEtBQUwsR0FBYTtBQUNaQyxtQkFBTztBQURLLFNBQWI7QUFIZTtBQU1qQjs7QUFFRDtBQUNBO0FBQ0E7QUFDQTtBQUNBOzs7O2lDQUVTO0FBQUE7O0FBQ1IsbUJBQ0M7QUFBQTtBQUFBLGtCQUFLLFdBQVUsd0JBQWY7QUFDRSwrQ0FBTyxXQUFVLGNBQWpCLEVBQWdDLE1BQUssTUFBckMsR0FERjtBQUVFO0FBQUE7QUFBQSxzQkFBUSxXQUFVLG9CQUFsQixFQUF1QyxTQUFTO0FBQUEsbUNBQU0sT0FBS0YsS0FBTCxDQUFXRyxZQUFYLENBQXdCQyxNQUFNQyxNQUFOLENBQWFILEtBQXJDLENBQU47QUFBQSx5QkFBaEQ7QUFBQTtBQUNFLGtEQUFNLFdBQVUsNEJBQWhCO0FBREY7QUFGRixhQUREO0FBUUE7Ozs7RUF4Qm1CSSxNQUFNQyxTOztBQTJCM0I7QUFDQTs7O0FBQ0FDLE9BQU9ULE1BQVAsR0FBZ0JBLE1BQWhCIiwiZmlsZSI6IlNlYXJjaC5qcyIsInNvdXJjZXNDb250ZW50IjpbImNsYXNzIFNlYXJjaCBleHRlbmRzIFJlYWN0LkNvbXBvbmVudCB7XG5jb25zdHJ1Y3Rvcihwcm9wcykge1xuICAgIHN1cGVyKHByb3BzKTtcblxuICAgIHRoaXMuc3RhdGUgPSB7XG4gICAgXHR2YWx1ZTogXCJcIlxuICAgIH1cbiB9XG5cbiAvLyBoYW5kbGVPbkNsaWNrKGV2ZW50KSB7XG4gLy8gXHR0aGlzLnNldFN0YXRlICh7XG4gLy8gXHRcdHZhbHVlOiBldmVudC50YXJnZXQudmFsdWVcbiAvLyBcdH0pXG4gLy8gfVxuXG4gcmVuZGVyKCkge1xuIFx0cmV0dXJuIChcblx0ICA8ZGl2IGNsYXNzTmFtZT1cInNlYXJjaC1iYXIgZm9ybS1pbmxpbmVcIj5cblx0ICAgIDxpbnB1dCBjbGFzc05hbWU9XCJmb3JtLWNvbnRyb2xcIiB0eXBlPVwidGV4dFwiLz5cblx0ICAgIDxidXR0b24gY2xhc3NOYW1lPVwiYnRuIGhpZGRlbi1zbS1kb3duXCIgb25DbGljaz17KCkgPT4gdGhpcy5wcm9wcy5oYW5kbGVTZWFyY2goZXZlbnQudGFyZ2V0LnZhbHVlKX0+IHN1Ym1pdFxuXHQgICAgICA8c3BhbiBjbGFzc05hbWU9XCJnbHlwaGljb24gZ2x5cGhpY29uLXNlYXJjaFwiPjwvc3Bhbj5cblx0ICAgIDwvYnV0dG9uPlxuXHQgIDwvZGl2PiBcblx0KVxuIH1cbn1cblxuLy8gSW4gdGhlIEVTNiBzcGVjLCBmaWxlcyBhcmUgXCJtb2R1bGVzXCIgYW5kIGRvIG5vdCBzaGFyZSBhIHRvcC1sZXZlbCBzY29wZVxuLy8gYHZhcmAgZGVjbGFyYXRpb25zIHdpbGwgb25seSBleGlzdCBnbG9iYWxseSB3aGVyZSBleHBsaWNpdGx5IGRlZmluZWRcbndpbmRvdy5TZWFyY2ggPSBTZWFyY2g7XG4iXX0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb21wb25lbnRzL1NlYXJjaC5qc3giXSwibmFtZXMiOlsiU2VhcmNoIiwicHJvcHMiLCJzdGF0ZSIsInZhbHVlIiwiZXZlbnQiLCJzZXRTdGF0ZSIsInRhcmdldCIsImhhbmRsZU9uQ2hhbmdlIiwiaGFuZGxlU2VhcmNoIiwiYmluZCIsIlJlYWN0IiwiQ29tcG9uZW50Iiwid2luZG93Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7O0lBQU1BLE07OztBQUNOLG9CQUFZQyxLQUFaLEVBQW1CO0FBQUE7O0FBQUEsb0hBQ1RBLEtBRFM7O0FBR2YsY0FBS0MsS0FBTCxHQUFhO0FBQ1pDLG1CQUFPO0FBREssU0FBYjtBQUhlO0FBTWpCOzs7O3VDQUdjQyxLLEVBQU87QUFDckI7QUFDQSxpQkFBS0MsUUFBTCxDQUFlO0FBQ2RGLHVCQUFPQyxNQUFNRSxNQUFOLENBQWFIO0FBRE4sYUFBZjtBQUdBOzs7aUNBRVE7QUFBQTs7QUFDUixtQkFDQztBQUFBO0FBQUEsa0JBQUssV0FBVSx3QkFBZjtBQUNFLCtDQUFPLFdBQVUsY0FBakIsRUFBZ0MsTUFBSyxNQUFyQyxFQUE0QyxhQUFZLFFBQXhELEVBQWlFLFVBQVUsa0JBQUNDLEtBQUQsRUFBVztBQUFDLCtCQUFLRyxjQUFMLENBQW9CSCxLQUFwQjtBQUEyQixxQkFBbEgsR0FERjtBQUVFO0FBQUE7QUFBQSxzQkFBUSxXQUFVLG9CQUFsQixFQUF1QyxTQUFTLEtBQUtILEtBQUwsQ0FBV08sWUFBWCxDQUF3QkMsSUFBeEIsQ0FBNkIsSUFBN0IsRUFBbUMsS0FBS1AsS0FBTCxDQUFXQyxLQUE5QyxDQUFoRDtBQUFBO0FBQ0Usa0RBQU0sV0FBVSw0QkFBaEI7QUFERjtBQUZGLGFBREQ7QUFRQTs7OztFQTFCbUJPLE1BQU1DLFM7O0FBNkIzQjtBQUNBOzs7QUFDQUMsT0FBT1osTUFBUCxHQUFnQkEsTUFBaEIiLCJmaWxlIjoiU2VhcmNoLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY2xhc3MgU2VhcmNoIGV4dGVuZHMgUmVhY3QuQ29tcG9uZW50IHtcbmNvbnN0cnVjdG9yKHByb3BzKSB7XG4gICAgc3VwZXIocHJvcHMpO1xuXG4gICAgdGhpcy5zdGF0ZSA9IHtcbiAgICBcdHZhbHVlOiBcIlwiXG4gICAgfVxuIH1cblxuXG4gaGFuZGxlT25DaGFuZ2UoZXZlbnQpIHtcbiBcdC8vIGNvbnNvbGUubG9nKGV2ZW50LnRhcmdldC52YWx1ZSlcbiBcdHRoaXMuc2V0U3RhdGUgKHtcbiBcdFx0dmFsdWU6IGV2ZW50LnRhcmdldC52YWx1ZVxuIFx0fSlcbiB9XG5cbiByZW5kZXIoKSB7XG4gXHRyZXR1cm4gKFxuXHQgIDxkaXYgY2xhc3NOYW1lPVwic2VhcmNoLWJhciBmb3JtLWlubGluZVwiPlxuXHQgICAgPGlucHV0IGNsYXNzTmFtZT1cImZvcm0tY29udHJvbFwiIHR5cGU9XCJ0ZXh0XCIgcGxhY2Vob2xkZXI9XCJzZWFyY2hcIiBvbkNoYW5nZT17KGV2ZW50KSA9PiB7dGhpcy5oYW5kbGVPbkNoYW5nZShldmVudCl9fS8+XG5cdCAgICA8YnV0dG9uIGNsYXNzTmFtZT1cImJ0biBoaWRkZW4tc20tZG93blwiIG9uQ2xpY2s9e3RoaXMucHJvcHMuaGFuZGxlU2VhcmNoLmJpbmQodGhpcywgdGhpcy5zdGF0ZS52YWx1ZSl9PiBnbyFcblx0ICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiZ2x5cGhpY29uIGdseXBoaWNvbi1zZWFyY2hcIj48L3NwYW4+XG5cdCAgICA8L2J1dHRvbj5cblx0ICA8L2Rpdj4gXG5cdClcbiB9XG59XG5cbi8vIEluIHRoZSBFUzYgc3BlYywgZmlsZXMgYXJlIFwibW9kdWxlc1wiIGFuZCBkbyBub3Qgc2hhcmUgYSB0b3AtbGV2ZWwgc2NvcGVcbi8vIGB2YXJgIGRlY2xhcmF0aW9ucyB3aWxsIG9ubHkgZXhpc3QgZ2xvYmFsbHkgd2hlcmUgZXhwbGljaXRseSBkZWZpbmVkXG53aW5kb3cuU2VhcmNoID0gU2VhcmNoO1xuIl19
