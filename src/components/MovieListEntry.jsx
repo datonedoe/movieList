@@ -3,19 +3,19 @@ class MovieListEntry extends React.Component {
     super(props);
 
     this.state = {
-      isWatched: this.props.seen || false
+      isWatched: false
     }
   }
 
   handleWatchedToggle() {
     console.log('hello')
-    if (!this.state.isWatched) {
-      this.props.addWatched({...this.props.movie, seen: true})
-      this.props.removeUnWatched(this.props.movie)
-    } else {
-      this.props.addUnWatched({...this.props.movie, seen: false})
-      this.props.removeWatched(this.props.movie)
-    }
+    // if (!this.state.isWatched) {
+    //   this.props.addWatched(this.props.movie)
+    //   this.props.removeUnWatched(this.props.movie)
+    // } else {
+    //   this.props.addUnWatched(this.props.movie)
+    //   this.props.removeWatched(this.props.movie)
+    // }
 
     this.setState({
       isWatched: !this.state.isWatched

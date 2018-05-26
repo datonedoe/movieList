@@ -25,9 +25,3 @@ class Add extends React.Component {
 		)
 	}
 }
-	// <div>
-	// <form onSubmit={this.props.handleAdd.bind(this, this.state.value)}>
-	// 	<input type="text" name="Add Movie Here" value={this.state.value} onChange={this.handleChange.bind(this)}/>
-	// 	<input type="submit" value="add"/>
-	// </form>
-	// </div> 

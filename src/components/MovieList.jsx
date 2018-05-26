@@ -2,39 +2,40 @@ class MovieList extends React.Component {
   constructor(props) {
     super(props);
   }
+
+    searchQueryFilter() {
+    if (this.props.query === '') {
+      return this.props.movies.map((movie, i) => {
+        return <MovieListEntry
+          movie={movie}
+          key={i}
+        />
+      });
+    } else {
+      var filtered = this.props.movies.filter((movie) => {
+        return movie.title.toLowerCase().includes(this.props.query.toLowerCase());
+      })
+
+      if (filtered.length === 0) {
+        // console.log('this is filtered', filtered)
+        return <div>No Movies Found</div>
+      } else {
+        return filtered.map((movie,i) => {
+          return <MovieListEntry 
+            movie={movie} 
+            key={i}
+          />
+        })
+      }
+    }
+  }
+
   render() {
-    
-    
     return (
       <div className="movie-list">
 
       {
-        (this.props.query === '') ?  
-
-        (this.props.movies.map((movie, i) =>
-            <MovieListEntry 
-              movie={movie} 
-              key={i}
-              addWatched={this.props.addWatched} 
-              addUnWatched={this.props.addUnWatched}
-              removeWatched={this.props.removeWatched}
-              removeUnWatched={this.props.removeUnWatched}
-            />
-        ))
-
-        :
-
-        (this.props.movies.filter((movie) => 
-          movie.title.includes(this.props.query)).map((movie, i) =>
-          <MovieListEntry 
-            movie={movie} 
-            key={i}
-            addWatched={this.props.addWatched} 
-            addUnWatched={this.props.addUnWatched}
-            removeWatched={this.props.removeWatched}
-            removeUnWatched={this.props.removeUnWatched}
-          />
-        ))
+        this.searchQueryFilter();
       }
       </div>
     );
